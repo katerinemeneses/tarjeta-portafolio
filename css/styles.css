@@ -1,0 +1,235 @@
+*{
+    padding: 0;/*El padding trabaja de adentro y da relleno*/
+
+    margin: 0;/*establece el margen para los cuatro lados*/
+
+    box-sizing: border-box; /*El valor border-box en el box-sizing hace que el padding y el border pasen a formar parte del cálculo del ancho de la caja y no lo suman posteriormente*/
+
+    text-decoration: none; /*text-decoration se usa para establecer el formato de texto a subrayado*/
+
+    list-style: none;/*Para no mostrar ningún marcador en una lista de elementos, se utiliza el valor none tanto en las listas ordenadas como en las no ordenadas: Lista <ul>, list-style-type: none.*/   
+}
+html{
+    scroll-behavior: smooth;/*Se le denomina Smooth Scroll al efecto de transición entre diferentes secciones de una misma página, esto mejora el aspecto visual de una web evitando cambios bruscos entre secciones.*/
+
+    font-size: 10px; /*La propiedad font-size especifica la dimensión de la letra. Este tamaño puede, a su vez, alterar el aspecto de alguna otra cosa, ya que se usa para calcular la longitud de las unidades em y ex.*/
+
+    height: 100%; /*La propiedad CSS height especifica la altura del area de contenido de un elemento. El área de contenido está dentro del padding, borde, y margen del elemento*/
+
+}
+body{
+    width: 100%;/*La propiedad CSS width especifica la anchura del area de contenido de un elemento. El área de contenido está dentro del padding, borde, y margen del elemento.*/
+
+    height: 100vh;/*La propiedad CSS height especifica la altura del area de contenido de un elemento. El área de contenido está dentro del padding, borde, y margen del elemento.hace 4 días*/
+
+    font-family: var(--fuente);/*La propiedad font-family define una lista de fuentes o familias de fuentes, con un orden de prioridad, para utilizar en un elemento seleccionado*/
+
+    background-image: url(../img/fondo-body.jpg);/*La background-imagepropiedad establece una o más imágenes de fondo para un elemento.*/
+
+    background-repeat: no-repeat;/*Utilizando la propiedad background-repeat es posible controlar si la imagen de fondo se repite o no y la forma en la que se repite.*/
+
+    display: grid;/*La declaración display: grid te proporciona una cuadrícula de una sola columna, por lo que tus elementos continúan mostrándose uno debajo del otro*/
+
+    place-items: center;/*La propiedad le place-items permite centrar el elemento horizontal y verticalmente, mientras lo hace con una cantidad mínima de código CSS.*/
+
+}
+:root{
+                 /*COLOR*/
+   --color-celeste: #20c4fa;/*Variables*/
+
+   --color-violeta: #8476d0;/*variables*/
+
+   --color-negro: hsl(0, 2%, 10%);/*variables*/
+
+   --color-gris: hsl(218, 14%, 36%) ;/*variables*/
+
+   --color-gradiente: linear-gradient(to right top, #664aff, #5749cb, #4d4497, #423d65, #353535);/*Para hacer un gradiente de varios colores*/
+
+                /*FUENTE*/
+    --fuente: "Segoe UI Historic", "Segoe UI", Helvetica, Arial, sans-serif;/*fuente de proyecto*/
+
+    --border: 1px solid red;/*creo el border para guiarme al momento de hacer un movimiento*/
+}
+img{
+    max-width: 100%;/* establece el ancho máximo de un elemento. Evita que el valor usado de la propiedad sea mayor que el valor especificado por .max-width widthmax-width*/
+
+    height: auto;/*La propiedad CSS height especifica la altura del área de contenido de un elemento. El  área de contenido  está  dentro  del relleno, borde y margen del elemento.*/
+
+}
+a{
+    display: block;/*La propiedad CSS displayespecifica si un elemento es tratado como block or inline element  y el diseño usado por sus hijos, como flow layout (Diseño de Flujo), grid (Cuadricula) o flex (Flexible).*/
+}
+
+                            /*Caja borde*/
+
+.fondo__glass1{
+   width: 350px;/*La propiedad CSS width especifica la anchura del area de contenido de un elemento. El área de contenido está dentro del padding, borde, y margen del elemento.*/
+
+   height: 470px;/*La propiedad CSS height especifica la altura del área de contenido de un elemento. El  área de contenido  está  dentro  del relleno, borde y margen del elemento.*/
+
+   background: rgba(255, 255, 255, 0.118);/*La propiedad background es un atajo para definir los valores individuales del fondo en una única regla CSS.*/
+
+   -webkit-backdrop-filter: blur(20px);/*se vea en los navegadores como  chroom*/
+
+   backdrop-filter: blur(20px);/**/
+
+   padding: 1em;/*El padding trabaja de adentro y da relleno*/
+
+   position: relative;/*El valor relative en el atributo position indica que la capa sí forma parte del flujo normal de elementos de la página*/
+
+}
+
+                        /*PSEUDO ELEMENTO COLORES*/
+
+.fondo__glass1::before, .fondo__glass1::after{   /*Los pseudo-elementos en CSS son un mecanismo para acceder a partes del HTML que no tienen asociado un nodo en el DOM.*/
+
+    content: "";  /*La propiedad contentse usa junto con los pseudo-elementos :beforey :afterpara generar contenido que se adjunta antes o después de un selector CSS.*/
+
+    height: 200px;/*La propiedad CSS height especifica la altura del área de contenido de un elemento. El  área de contenido  está  dentro  del relleno, borde y margen del elemento.*/
+
+    width: 200px;/*La propiedad CSS width especifica la anchura del area de contenido de un elemento. El área de contenido está dentro del padding, borde, y margen del elemento.*/
+
+    border-radius: 50%;/*La propiedad border-radius de CSS3 nos permite redondear los bordes de las cajas.*/
+
+    filter: blur(20px);/*La propiedad CSS filter dota de efectos gráficos como el desenfoque o cambio de color en la representación antes de que se muestre el elemento.*/
+
+    position: absolute;/*El valor absolute en el atributo position permite posicionar elementos de manera absoluta*/
+}
+.fondo__glass1::before{/*before crea un pseudoelemento que es el primer hijo del elemento seleccionado.*/
+    background-color: var(--color-celeste);/*Background-color es una propiedad de CSS que define el color de fondo de un elemento*/
+
+    top: 3vh;/*La propiedad top permite desplazar un elemento respecto a su posición original tomando como referencia el borde superior del elemento.*/
+
+    left: 4vw;/*Especifica parte de la posición de un elemento (posicionado - es decir, con una posición determinada por código*/
+}
+.fondo__glass1::after{/*Crea un pseudo-elemento que es el último hijo del elemento seleccionado. Es comunmente usado para añadir contenido cosmético a un elemento con la propiedad content */
+
+    background-color: rgb(199, 78, 255);/*La propiedad background es un atajo para definir los valores individuales del fondo en una única regla CSS.*/
+
+    top: 5vh;/*La propiedad top permite desplazar un elemento respecto a su posición original tomando como referencia el borde superior del elemento.*/
+
+    right: 10%;/*La propiedad right permite desplazar un elemento respecto a su posición original tomando como referencia el borde derecho del elemento.*/
+}
+
+                    /*Caja contenedora 2*/
+
+.fondo__glass2{
+    width: 100%;/*La propiedad CSS width especifica la anchura del area de contenido de un elemento. El área de contenido está dentro del padding, borde, y margen del elemento.*/
+
+    height: 100%;/*La propiedad CSS height especifica la altura del área de contenido de un elemento. El  área de contenido  está  dentro  del relleno, borde y margen del elemento.*/
+
+    background: rgba(255, 255, 255, 0.5);/*La propiedad background es un atajo para definir los valores individuales del fondo en una única regla CSS.*/
+
+    -webkit-backdrop-filter: blur(4px);/**/
+
+    backdrop-filter: blur(4px);/**/
+
+    border-top: 3px solid var(--color-celeste);/*border-top es una abreviatura que establece los valores de  border-top-color, border-top-style (en-US) , y border-top-width (en-US) . Estas propiedades las caracteristicas del borde superior de un elemento.*/
+
+    position: relative;/*especifica cómo un elemento es posicionado en el documento. Las propiedades top, right, bottom, y left*/
+
+    z-index: 10;/*La propiedad CSS z-indexindica el orden de un elemento posicionado y sus descendientes. Cuando varios elementos se superponen, los elementos con mayor valor z-index cubren aquellos con menor valor.*/
+
+}
+:is(.fondo__glass1, .fondo__glass2){
+    
+    border-radius: 1em;
+}
+
+                    /*Perfil usuario*/
+
+.cabecera{
+    height: 180px;
+}
+
+.caja__usuario{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+
+    margin-top: 3.3em;
+}
+.imagen__usuario{
+    width: 102px;
+    height: 102px;
+    background-image: url("../img/fondo\ usuario.jpg");
+    background-size: cover;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 1px 1px 15px 2px hsl(0, 0%, 13%);
+}
+.caja__usuario h1{
+    font-size: 2.1rem;                                                                   
+    line-height: 1.6;
+    margin-top:  .3em;
+}
+.caja__usuario p{
+    font-size: 1.2rem;
+    color: var(--color-gris);
+    letter-spacing: 2px ;
+    font-weight: 600;
+}
+.imagen__usuario img{
+    max-width: 100%;
+}
+
+/*MAIN*/
+
+.centrar{
+    max-width: 300px;
+    margin: 0 auto;
+    margin-bottom: 2.5em;
+}
+
+/*CAJA ABOUT*/
+
+.caja__about h3{
+    font-weight: bolder;
+    letter-spacing: 0.5px ;
+    line-height: 2.5;
+}
+.caja__about p{
+    font-size: 1.4rem;
+    line-height: 1.4;
+    color: var(--color-gris);
+    font-weight: 500;
+    width: 90%;
+    margin-bottom: 3.5em;
+}
+
+/*menú iconos redes sociales*/
+
+:is(.menu__iconos ,.caja__menu){
+    display: flex;
+}
+.iconos__li{
+    padding-left: 3em; 
+}
+.iconos__li:first-child{
+    padding-left: 0; 
+}
+.iconos__li img{
+    filter: invert(0.4);  
+    width: 17px; 
+}
+.iconos__li .icono__facebook{
+    width: 10px;  
+}
+.iconos__li  .icono__linkedin{
+    width: 18px; 
+}
+
+/*FOOTER*/
+
+.caja__menu{
+   justify-content: space-between;
+}
+.caja__menu li{
+    padding: 1.1em;
+    font-size: 1.4em;
+}
+.caja__menu li:hover{
+    background-color: rgba(231, 231, 231, 0.13);
+    border-bottom: 5px solid var(--color-violeta)
+}
